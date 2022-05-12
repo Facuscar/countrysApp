@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-by-country',
   templateUrl: './by-country.component.html',
   styleUrls: ['./by-country.component.scss']
 })
-export class ByCountryComponent implements OnInit {
+export class ByCountryComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  term: string = 'Hello, World!'
+
+  searchCountry() : void {
+    console.log(this.term)
   }
 
 }
