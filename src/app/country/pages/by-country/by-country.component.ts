@@ -11,20 +11,23 @@ export class ByCountryComponent {
 
   constructor( private countryService: CountryService ) { }
 
-  term: string = 'Hello, World!';
+  term: string = '';
   notFound: boolean = false;
   countries: Country[] = [];
 
-  searchCountry( term: string) : void {
+  search( term: string) : void {
     this.notFound = false;
     this.term = term;
-    this.countryService.searchCountry( this.term ).subscribe( (countries) => {
+    this.countryService.search( this.term, 'name' ).subscribe( (countries) => {
       this.countries = countries;
-      console.log(this.countries);
     }, (err) => {
       this.notFound = true;
       this.countries = []; 
     } );
+  }
+
+  preSearch( term: string) :void {
+    console.log('Pre search', term);
   }
 
 }

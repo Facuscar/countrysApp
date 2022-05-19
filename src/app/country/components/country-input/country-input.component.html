@@ -1,3 +1,12 @@
 <form action="">
-    <input type="text" name="term" class="form-control" placeholder="Search a country.." autocomplete="off" [(ngModel)]="term" (keyup.enter)="searchCountry()">
+    <input 
+    type="text" 
+    name="term" 
+    class="form-control" 
+    placeholder="{{placeholder}}" 
+    autocomplete="off" 
+    [(ngModel)]="term" 
+    (keyup.enter)="searchCountry()" 
+    (input)="pressedKey()"
+    />
 </form>

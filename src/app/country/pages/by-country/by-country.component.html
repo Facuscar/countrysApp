@@ -1,9 +1,11 @@
-<h2>By country</h2>
+<h2>by country</h2>
 <hr>
 
 <div class="row">
     <div class="col">
-        <app-country-input (onEnter)="searchCountry($event)"></app-country-input>
+        <app-country-input (onEnter)="search($event)" 
+        (onDebounce)="preSearch($event)"
+        placeholder = "Search a country.."></app-country-input>
     </div>
 </div>
 

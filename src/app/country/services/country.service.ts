@@ -8,14 +8,13 @@ import { Country } from '../interfaces/country.interface';
 })
 export class CountryService {
 
-  private apiUrl: string = 'https://restcountries.com/v3.1/name'
+  private apiUrl: string = 'https://restcountries.com/v3.1'
 
   constructor( private http: HttpClient ) {  }
 
-  searchCountry( term:string ): Observable<Country[]>{
+  search( term:string, type:string ): Observable<Country[]>{
 
-    const url = `${this.apiUrl}/${term}`;
+    const url = `${this.apiUrl}/${type}/${term}`;
     return this.http.get<Country[]>( url );
   }
-
 }
