@@ -15,9 +15,9 @@ export class ByCountryComponent {
   notFound: boolean = false;
   countries: Country[] = [];
 
-  searchCountry() : void {
+  searchCountry( term: string) : void {
     this.notFound = false;
-
+    this.term = term;
     this.countryService.searchCountry( this.term ).subscribe( (countries) => {
       this.countries = countries;
       console.log(this.countries);
